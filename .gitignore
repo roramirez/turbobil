@@ -1,0 +1,3 @@
+*.pyc
+agi_ast/config.ini
+*.swp

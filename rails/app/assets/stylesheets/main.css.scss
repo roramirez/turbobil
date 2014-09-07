@@ -1,0 +1,32 @@
+#modal {
+  margin-top: 10px;
+}
+.form-actions{
+  margin-top: 10px;
+}
+
+.form-inputs li {
+  margin-top: 10px;
+}
+
+input.editable_text_column {
+  background-color: #FBFF8C;
+  border: 1px none #FBFF8C;
+  box-shadow: 0 2px 19px #AAAAAA;
+  color: black;
+  display: none;
+  font-family: serif;
+  font-size: 1em;
+  font-style: italic;
+  height: 30px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  width: 180px;
+  z-index: 9090;
+}
+
+div.editable_text_column{
+  padding:4px;
+  background-color: #f9fbc2;
+}

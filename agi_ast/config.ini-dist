@@ -1,0 +1,7 @@
+[db]
+database = turbobil
+host = localhost
+port = 5432
+user = turbobil
+password = changeme
+adapter = postgresql

@@ -1,0 +1,14 @@
+#modal
+  h2 Edit Price List
+
+  section#quick-add-errors
+    = render 'error_messages', object: @price_customer
+
+  section.form-fluid
+    = simple_form_for(@price_customer, url: admins_price_customers_update_list_path, remote: true) do |f|
+      .form-inputs
+        = f.input_field :name
+        = f.input :percent_recharge
+      ul.form-actions
+        li
+          = f.submit 'Save'

@@ -1,0 +1,3 @@
+[submodule "agi_ast/lib/sqlalchemy"]
+	path = agi_ast/lib/sqlalchemy
+	url = https://github.com/zzzeek/sqlalchemy.git
