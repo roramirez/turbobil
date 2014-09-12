@@ -48,6 +48,10 @@ Restart service PostgreSQL
     cd /home/turbobil
     # Clone repository
     sudo -u turbobil -H git clone https://github.com/roramirez/turbobil.git -b master tbil
+    cd tbil
+    sudo -u turbobil -H git submodule init
+    sudo -u turbobil -H git submodule update
+
 
 The project is develop in Ruby 2.1.2 and used RVM for install
 
