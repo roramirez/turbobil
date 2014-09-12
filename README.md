@@ -76,6 +76,9 @@ The project is develop in Ruby 2.1.2 and used RVM for install
     export RAILS_ENV=production
     export SECRET_KEY_BASE=$(rake secret)
 
+    #load fixtures
+    rake db:fixtures:load
+
     #run app
     rails s
 

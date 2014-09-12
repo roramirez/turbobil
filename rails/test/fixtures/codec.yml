@@ -1,6 +1,3 @@
-g729:
-  name: G.729
-  code: g729
 g711:
   name: G.711
   code: ulaw
