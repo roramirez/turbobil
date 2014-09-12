@@ -31,13 +31,3 @@ aptitude install build-essential gcc g++ automake autoconf libtool make \
  * make install
  * make config
  * make samples
-
-------------------------------------------------------------------------------
--- CONFIG TURBOBIL -----------------------------------------------------------
-
-cp agi
-#include "sips/*.account"
-#include "sips/*.provider"
-
-
-#include \"exten_tbill.conf\"" >> /etc/asterisk/extensions.conf
