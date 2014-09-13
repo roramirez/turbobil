@@ -1,0 +1,2 @@
+;;init file prevent error if not have any account
+;;ERROR config.c:1599 process_text_line:
