@@ -120,6 +120,8 @@ Will do this as user root
 
 #### Configuration
     cp /home/turbobil/tbil/agi_ast/exten_tbill.conf /etc/asterisk
+    ln -s /home/turbobil/tbil/agi_ast/ /var/lib/asterisk/agi-bin/tbil
+    cp /home/turbobil/tbil/agi_ast/config.ini-dist /home/turbobil/tbil/agi_ast/config.ini
 
     echo "#include \"/home/turbobil/tbil/rails/config/sips/*.account\"" >> /etc/asterisk/sip.conf
     echo "#include \"/home/turbobil/tbil/rails/config/sips/*.provider\"">> /etc/asterisk/sip.conf
