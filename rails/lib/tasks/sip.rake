@@ -1,5 +1,5 @@
 require 'inifile'
-desc "create/upte account file for sip conf"
+desc "create/update account file for sip conf"
 
 task :account_sip => :environment do
 

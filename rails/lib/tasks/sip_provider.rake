@@ -1,5 +1,5 @@
 require 'inifile'
-desc "create/upte provider file for sip conf"
+desc "create/update provider file for sip conf"
 
 task :provider_sip => :environment do
 
