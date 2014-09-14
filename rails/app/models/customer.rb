@@ -9,6 +9,8 @@ class Customer < ActiveRecord::Base
     validates :name, presence: true
     validates :type_pay, presence: true
 
+    validates :password, presence: true, on: :create
+
     has_many :accounts, :class_name => 'Account'
     has_many :calls, :class_name => 'Call'
     belongs_to :customer, :class_name => 'Customer', :foreign_key => :customer_id

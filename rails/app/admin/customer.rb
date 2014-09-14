@@ -13,6 +13,17 @@ ActiveAdmin.register Customer, namespace: :admins do
     end
   end
 
+  controller do
+    def update
+      if params[:customer][:password].blank?
+        params[:customer].delete("password")
+        params[:customer].delete("password_confirmation")
+      end
+      super
+    end
+  end
+
+
   form do |f|
     f.inputs "Details" do
       f.input :name,          :as => :string
