@@ -3,6 +3,7 @@ class Account < ActiveRecord::Base
 
     validates_uniqueness_of :code
     validates :code, presence: true
+    validates :codecs, :presence => { :message => "Select a codec" }
 
     belongs_to :customer, :class_name => 'Customer', :foreign_key => :customer_id
     has_many :account_codecs, :class_name => 'AccountCodec'
