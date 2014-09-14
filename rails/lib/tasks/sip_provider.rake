@@ -3,7 +3,13 @@ desc "create/update provider file for sip conf"
 
 task :provider_sip => :environment do
 
-  if provider = Provider.find(ENV["ID"])
+  if ENV["ID"] == 'ALL'
+    providers = Provider.all
+  else
+    providers = Provider.find(ENV["ID"])
+  end
+
+  providers.each do |provider|
 
     id = "#{provider.id}_provider"
     filename =  "#{Settings.turbobil['dir_sips']}#{provider.id}.provider"
