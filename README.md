@@ -111,6 +111,10 @@ If dont have Asterisk installed check this mini guide
          linux-headers-$(uname -r) libxml2-dev cmake
 
 
+If you will install Asterisk on version 1.12 add these dependences
+    aptitude install libjansson-dev uuid-dev
+
+
 #### Compiling and install
 Will do this as user root
 
