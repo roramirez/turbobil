@@ -32,14 +32,20 @@ This guide is checked on Debian/Ubuntu systems
     # Exit session on database
     template1=# \q
 
+
 Add this line
+
     host    turbobil        turbobil        127.0.0.1/32            trust
+
 before
+
     host    all             all             127.0.0.1/32            md5
 
-on /etc/postgresql/9.3/main/pg_hba.conf
 
-Restart service PostgreSQL
+on */etc/postgresql/9.3/main/pg_hba.conf*
+
+#### Restart service PostgreSQL
+
     /etc/init.d/postgresql restart
 
 
