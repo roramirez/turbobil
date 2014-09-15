@@ -3,31 +3,3 @@
 ===
 ===                    Tested: Asterisk 1.8.30.0
 ==============================================================================
-
-
-
-------------------------------------------------------------------------------
--- HOW TO INSTALL ASTERISK ---------------------------------------------------
-
-If dont have Asterisk installed, follow this mini guide
-
-    Install dependences
-
-Debian:
-aptitude install build-essential gcc g++ automake autoconf libtool make \
-         libncurses5-dev flex bison patch libtool autoconf \
-         linux-headers-$(uname -r) libxml2-dev cmake
-
-
-
-    Compiling and install
-
- * cd /usr/src
- * wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-1.8.30.0.tar.gz
- * tar xvfz asterisk-1.8.30.0.tar.gz
- * cd asterisk-1.8.30.0
- * ./configure
- * make
- * make install
- * make config
- * make samples
