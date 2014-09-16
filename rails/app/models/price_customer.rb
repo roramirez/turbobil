@@ -5,9 +5,9 @@ class PriceCustomer < ActiveRecord::Base
     validates :percent_recharge, presence: true
     validates :admin_id, presence: true
 
-    has_many :calls, :class_name => 'Call'
-    has_many :rates_customers, :class_name => 'RatesCustomer'
-    belongs_to :admin, :class_name => 'Admin', :foreign_key => :admin_id
+    has_many :calls
+    has_many :rates_customers
+    belongs_to :admin
 
   def final_price (route, final_price=nil)
     rc = RateCustomer.find_by(route: route, price_customer: id)

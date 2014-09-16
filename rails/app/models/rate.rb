@@ -7,6 +7,6 @@ class Rate < ActiveRecord::Base
     validates :priority, presence: true
     validates :price, presence: true
 
-    belongs_to :provider, :class_name => 'Provider', :foreign_key => :provider_id
-    belongs_to :route, :class_name => 'Route', :foreign_key => :route_id
+    belongs_to :provider
+    belongs_to :route
 end

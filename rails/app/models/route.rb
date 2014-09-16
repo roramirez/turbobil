@@ -7,10 +7,10 @@ class Route < ActiveRecord::Base
 
 
 
-    has_many :calls, :class_name => 'Call'
-    has_many :rates_customers, :class_name => 'RatesCustomer'
-    has_many :rates, :class_name => 'Rate'
-    belongs_to :admin, :class_name => 'Admin', :foreign_key => :admin_id
+    has_many :calls
+    has_many :rates_customers
+    has_many :rates
+    belongs_to :admin
 
   def to_s
     name

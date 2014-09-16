@@ -5,8 +5,8 @@ class Account < ActiveRecord::Base
     validates :code, presence: true
     validates :codecs, :presence => { :message => "Select a codec" }
 
-    belongs_to :customer, :class_name => 'Customer', :foreign_key => :customer_id
-    has_many :account_codecs, :class_name => 'AccountCodec'
+    belongs_to :customer
+    has_many :account_codecs
     has_many :codecs, :through => :account_codecs
-    belongs_to :admin, :class_name => 'Admin', :foreign_key => :admin_id
+    belongs_to :admin
 end

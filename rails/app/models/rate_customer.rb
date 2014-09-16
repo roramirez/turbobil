@@ -2,8 +2,8 @@ class RateCustomer < ActiveRecord::Base
     self.table_name = 'rate_customer'
 
 
-    belongs_to :route, :class_name => 'Route', :foreign_key => :route_id
-    belongs_to :price_customer, :class_name => 'PriceCustomer', :foreign_key => :price_customer_id
+    belongs_to :route
+    belongs_to :price_customer
 
   def self.get_for_edit(route_id, price_customer_id)
     rate_customer = RateCustomer.find_by route: route_id, price_customer: price_customer_id
