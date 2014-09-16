@@ -10,7 +10,7 @@ class RateCustomer < ActiveRecord::Base
   private
   def assign_value
     return if read_attribute(:value).present?
-    value = price_customer.final_price(route_id, route.price_list)
+    value = price_customer.final_price_for_route(route)
     write_attribute(:value, value)
   end
 end
