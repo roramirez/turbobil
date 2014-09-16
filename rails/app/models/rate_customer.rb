@@ -5,18 +5,12 @@ class RateCustomer < ActiveRecord::Base
     belongs_to :route
     belongs_to :price_customer
 
-  def self.get_for_edit(route_id, price_customer_id)
-    rate_customer = RateCustomer.find_by route: route_id, price_customer: price_customer_id
-    if !rate_customer
-      rate_customer = RateCustomer.new
+    before_create :assign_value
 
-      price_customer = PriceCustomer.find(price_customer_id)
-      route = Route.find(route_id)
-
-      rate_customer.route = route
-      rate_customer.price_customer = price_customer
-      rate_customer.value = price_customer.final_price(route_id, route.price_list)
-    end
-  rate_customer
+  private
+  def assign_value
+    return if read_attribute(:value).present?
+    value = price_customer.final_price(route_id, route.price_list)
+    write_attribute(:value, value)
   end
 end
