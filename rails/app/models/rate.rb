@@ -2,10 +2,10 @@ class Rate < ActiveRecord::Base
     self.table_name = 'rate'
 
 
-    validates :provider, presence: true
-    validates :route, presence: true
-    validates :priority, presence: true
-    validates :price, presence: true
+    validates_presence_of :provider
+    validates_presence_of :route
+    validates_presence_of :priority
+    validates_presence_of :price
 
     belongs_to :provider
     belongs_to :route

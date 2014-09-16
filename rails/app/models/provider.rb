@@ -1,7 +1,7 @@
 class Provider < ActiveRecord::Base
     self.table_name = 'provider'
 
-    validates :name, presence: true
+    validates_presence_of :name
     validates :codecs, :presence => { :message => "Select a codec" }
 
     has_many :calls

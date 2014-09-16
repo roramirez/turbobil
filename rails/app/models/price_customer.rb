@@ -1,9 +1,9 @@
 class PriceCustomer < ActiveRecord::Base
     self.table_name = 'price_customer'
 
-    validates :name, presence: true
-    validates :percent_recharge, presence: true
-    validates :admin_id, presence: true
+    validates_presence_of :name
+    validates_presence_of :percent_recharge
+    validates_presence_of :admin_id
 
     has_many :calls
     has_many :rates_customers

@@ -6,8 +6,8 @@ class Customer < ActiveRecord::Base
     include CustomerHelper
     self.table_name = 'customer'
 
-    validates :name, presence: true
-    validates :type_pay, presence: true
+    validates_presence_of :name
+    validates_presence_of :type_pay
 
     validates :password, presence: true, on: :create
 

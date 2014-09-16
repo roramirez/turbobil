@@ -2,8 +2,8 @@ class Route < ActiveRecord::Base
     self.table_name = 'route'
 
 
-    validates :prefix, presence: true
-    validates :price_list, presence: true
+    validates_presence_of :prefix
+    validates_presence_of :price_list
 
 
 

@@ -2,7 +2,7 @@ class Account < ActiveRecord::Base
     self.table_name = 'account'
 
     validates_uniqueness_of :code
-    validates :code, presence: true
+    validates_presence_of :code
     validates :codecs, :presence => { :message => "Select a codec" }
 
     belongs_to :customer
