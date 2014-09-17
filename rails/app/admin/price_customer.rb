@@ -119,7 +119,7 @@ ActiveAdmin.register PriceCustomer, :as => "Prices" , namespace: :customers do
     column :prefix
     column "Route", :route_name
     column "Price"   do |p|
-         p.final_price(p.route_id, p.price_list)
+         p.final_price_for_route(p.route_id, p.price_list)
     end
     actions
   end
