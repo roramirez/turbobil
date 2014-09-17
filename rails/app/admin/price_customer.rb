@@ -89,7 +89,7 @@ ActiveAdmin.register PriceCustomer, namespace: :admins do
 
     column :price_list
     column "Final Price" do |rate|
-      edit_rate_customer rate,  p.final_price_for_route(rate.route)
+      edit_rate_customer rate,  rate.final_price_for_route(rate.route_id, rate.price_list)
     end
 
   end
