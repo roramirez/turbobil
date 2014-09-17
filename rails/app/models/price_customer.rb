@@ -1,19 +1,20 @@
 class PriceCustomer < ActiveRecord::Base
     self.table_name = 'price_customer'
 
-    validates :name, presence: true
-    validates :percent_recharge, presence: true
-    validates :admin_id, presence: true
+    validates_presence_of :name
+    validates_presence_of :percent_recharge
+    validates_presence_of :admin_id
 
-    has_many :calls, :class_name => 'Call'
-    has_many :rates_customers, :class_name => 'RatesCustomer'
-    belongs_to :admin, :class_name => 'Admin', :foreign_key => :admin_id
+    has_many :calls
+    has_many :rates_customers
+    belongs_to :admin
 
-  def final_price (route, final_price=nil)
-    rc = RateCustomer.find_by(route: route, price_customer: id)
-    if rc
+  def final_price_for_route(route)
+    rate_customer = self.rate_customers.find_by(route: route)
+    if rate_customer
       rc.value
     else
+      final_price = route.price_list
       final_price  + (final_price * percent_recharge) / 100
     end
   end

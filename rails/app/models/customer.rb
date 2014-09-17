@@ -6,18 +6,18 @@ class Customer < ActiveRecord::Base
     include CustomerHelper
     self.table_name = 'customer'
 
-    validates :name, presence: true
-    validates :type_pay, presence: true
+    validates_presence_of :name
+    validates_presence_of :type_pay
 
     validates :password, presence: true, on: :create
 
-    has_many :accounts, :class_name => 'Account'
-    has_many :calls, :class_name => 'Call'
-    belongs_to :customer, :class_name => 'Customer', :foreign_key => :customer_id
-    belongs_to :currency, :class_name => 'Currency', :foreign_key => :currency_id
-    belongs_to :admin, :class_name => 'Admin', :foreign_key => :admin_id
-    belongs_to :type_customer, :class_name => 'TypeCustomer', :foreign_key => :type_customer_id
-    belongs_to :price_customer, :class_name => 'PriceCustomer', :foreign_key => :price_customer_id
+    has_many :accounts
+    has_many :calls
+    belongs_to :customer
+    belongs_to :currency
+    belongs_to :admin
+    belongs_to :type_customer
+    belongs_to :price_customer
 
     def type_pay_label
       type_payment type_pay

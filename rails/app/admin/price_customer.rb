@@ -36,10 +36,16 @@ ActiveAdmin.register PriceCustomer, namespace: :admins do
     end
 
     def update_rate
-      @rate_customer = RateCustomer.get_for_edit(params[:route], params[:price_customer])
-      eval_price = Float(params[:value]) != nil rescue false
-      if eval_price
-        @rate_customer.value = params[:value]
+      @rate_customer = RateCustomer.where(
+        route_id: params[:route],
+        price_customer_id: params[:price_customer]
+      ).first_or_initialize
+
+      # there's probably better ways of doing this
+      # params[:value].to_f returns 0.0 for all invalid values
+      value_as_float = Float(params[:value]) rescue nil
+      if value_as_float
+        @rate_customer.value = value_as_float
         @rate_customer.save
         render layout: false
       else
@@ -82,8 +88,8 @@ ActiveAdmin.register PriceCustomer, namespace: :admins do
 
 
     column :price_list
-    column "Final Price" do |p|
-      edit_rate_customer p,  p.final_price(p.route_id, p.price_list)
+    column "Final Price" do |rate|
+      edit_rate_customer rate,  p.final_price_for_route(rate.route)
     end
 
   end
