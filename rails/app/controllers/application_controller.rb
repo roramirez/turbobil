@@ -9,4 +9,6 @@ class ApplicationController < ActionController::Base
     system "#{Rails.root}/bin/rake #{task} #{args.join(' ')} --trace 2>&1 >> #{Rails.root}/log/rake.log &"
   end
 
+  # Override build_footer method in ActiveAdmin::Views::Pages
+  require 'active_admin_views_pages_base.rb'
 end
