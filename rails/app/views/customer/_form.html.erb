@@ -1,9 +1,0 @@
-<%= form_for :customer, :url => customer_create_path do |f| %>
-    <p>
-    <%= f.label :titulo %>
-    <%= f.text_field :name, :placeholder => "name", :class => "register-input" %></p>
-
-    <p><%= f.email_field :email, :placeholder => "Email", :class => "register-input" %></p>
-
-    <%= f.submit :submit, :class => "register-btn" %>
-<% end %>

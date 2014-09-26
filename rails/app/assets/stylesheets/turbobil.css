@@ -1,0 +1,51 @@
+.sorted:after{
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: black;
+}
+
+.asc:after{
+    content: "\f0de";
+    color: black;
+}
+
+.desc:after{
+    content: "\f0dd";
+    background: 0 0;
+}
+
+a.sorted {
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar-header{
+    padding: 20px;
+    height: 100px;
+    position: relative;
+    background: none repeat scroll 0% 0% #DDD;
+}
+
+.sidebar-header img {
+    width: 50px;
+    border-radius: 50em;
+    float: left;
+    margin: 0px 10px 0px 0px;
+}
+
+.sidebar-header h2 {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sidebar-header h3 {
+    font-size: 12px;
+}
+
+.sidebar-header h2, .sidebar-header h3 {
+    line-height: 0;
+}
+

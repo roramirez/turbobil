@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   post '/admins/price_customers/:route/:price_customer/update_rate'   => 'admins/price_customers#update_rate', as: :admins_price_customers_update_rate
 
-  devise_for :customers, ActiveAdmin::Devise.config.merge({path: '/customers'})
   devise_for :admins, ActiveAdmin::Devise.config.merge({path: '/admins'})
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -65,9 +64,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  #get  'customer'       => 'customer#index'
-  #get  'customer/new'   => 'customer#new'
-  #post 'customer/create'=> 'customer#create'
-
-
+  get  'customer/calls'  => 'customer#calls'
+  get  'customer/accounts'  => 'customer#accounts'
+  get  'customer/prices'  => 'customer#prices'
+  devise_for :customers, :path => '/customer', controllers: { sessions: :sessions }
+  get "/customer" => "customer#dashboard"
 end
