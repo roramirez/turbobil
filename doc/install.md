@@ -91,7 +91,7 @@ admin http://IP_MACHINE:3000/admins
   - Email: admin@example.com
   - Password: password
 
-For customers http://IP_MACHINE:3000/customers
+For customers http://IP_MACHINE:3000/customer
 
 
 ### Asterisk
