@@ -1,6 +1,5 @@
 class TypeCustomer < ActiveRecord::Base
-    self.table_name = 'type_customer'
+  self.table_name = 'type_customer'
 
-
-    has_many :customers
+  has_many :customers
 end

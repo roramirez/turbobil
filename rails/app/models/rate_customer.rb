@@ -1,11 +1,10 @@
 class RateCustomer < ActiveRecord::Base
-    self.table_name = 'rate_customer'
+  self.table_name = 'rate_customer'
 
+  belongs_to :route
+  belongs_to :price_customer
 
-    belongs_to :route
-    belongs_to :price_customer
-
-    before_create :assign_value
+  before_create :assign_value
 
   private
   def assign_value
