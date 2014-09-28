@@ -1,8 +1,8 @@
 Database MySQL
 --------------
 
-   # Install packages
-   sudo aptitude -y install mysql-server mysql-client libmysqlclient-dev python-mysqldb
+    # Install packages
+    sudo aptitude -y install mysql-server mysql-client libmysqlclient-dev python-mysqldb
 
     # Login MySQL Server
     mysql -u root -p
