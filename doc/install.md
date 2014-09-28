@@ -18,7 +18,7 @@ This guide is tested on Debian/Ubuntu systems
 
 ### Database
 
-For install with MySQL check the [Guide for MySQL] (doc/db_mysql.db)
+For install with MySQL check the [Guide for MySQL] (db_mysql.md)
 
     # Install PostgreSQL database
     sudo aptitude install -y postgresql postgresql-client libpq-dev python-psycopg2
