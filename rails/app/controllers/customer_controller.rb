@@ -9,7 +9,6 @@ class CustomerController < ApplicationController
   end
 
   def calls_filtered
-
     @calls = current_customer.calls
 
     if params[:call_start].blank? and  params[:call_end].blank?
@@ -18,7 +17,6 @@ class CustomerController < ApplicationController
     end
 
     @calls = @calls.sorted(params[:sort]).filter(params.slice(:ip, :call_start, :call_end))
-
   end
 
   def accounts
@@ -26,7 +24,6 @@ class CustomerController < ApplicationController
   end
 
   def prices
-
     @prices_customer = PriceCustomer.get_join_route(current_customer.price_customer_id)
                                     .page(params[:page])
                                     .sorted(params[:sort])
