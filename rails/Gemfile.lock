@@ -189,8 +189,8 @@ DEPENDENCIES
   inifile (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
   kaminari
+  mysql2
   pg
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
