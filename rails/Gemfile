@@ -37,7 +37,11 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#DBs
 gem 'pg'
+gem "mysql2"
+
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
 gem 'inifile', '~> 3.0.0'

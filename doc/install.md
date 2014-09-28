@@ -17,6 +17,9 @@ This guide is tested on Debian/Ubuntu systems
 
 
 ### Database
+
+    For install with MySQL check the [Guide for MySQL] (doc/db_mysql.db)
+
     # Install PostgreSQL database
     sudo aptitude install -y postgresql postgresql-client libpq-dev python-psycopg2
 
@@ -68,7 +71,16 @@ The project is develop in Ruby 2.1.2 and used RVM for install
 #### Config enviroment
     cd tbil/rails/
     bundle install
+
+    # PostgreSQL Config database
     cp tbil/rails/config/database.yml.postgresql tbil/rails/config/database.yml
+
+    # MySQL config
+    cp tbil/rails/config/database.yml.mysql tbil/rails/config/database.yml
+    # Update password in config/database.yml
+    # Change 'changeme' with the value you have given to $password
+
+
     #initialized db
     rake db:migrate --trace RAILS_ENV=production
 
@@ -128,7 +140,14 @@ Will do this as user root
 #### Configuration
     cp /home/turbobil/tbil/agi_ast/exten_tbill.conf /etc/asterisk
     ln -s /home/turbobil/tbil/agi_ast/ /var/lib/asterisk/agi-bin/tbil
+
+    # PostgreSQL Config database
     cp /home/turbobil/tbil/agi_ast/config.ini-dist /home/turbobil/tbil/agi_ast/config.ini
+
+    # MySQL config
+    cp /home/turbobil/tbil/agi_ast/config.ini-dist-mysql /home/turbobil/tbil/agi_ast/config.ini
+    # Update password in agi_ast/config.ini
+    # Change 'changeme' with the value you have given to $password
 
     echo "#include \"/home/turbobil/tbil/rails/config/sips/*.account\"" >> /etc/asterisk/sip.conf
     echo "#include \"/home/turbobil/tbil/rails/config/sips/*.provider\"">> /etc/asterisk/sip.conf
