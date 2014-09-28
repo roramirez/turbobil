@@ -260,6 +260,7 @@ class Route(DeclarativeBase):
     id = Column('id', INTEGER(), primary_key=True, nullable=False)
     name = Column('name', TEXT())
     prefix = Column('prefix', TEXT())
+    price_list = Column('price_list', DOUBLE_PRECISION(precision=53))
 
     #relation definitions
     @classmethod
