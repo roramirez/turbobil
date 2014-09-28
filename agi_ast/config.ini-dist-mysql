@@ -1,0 +1,6 @@
+[db]
+database = turbobil
+host = localhost
+user = turbobil
+password = changeme
+adapter = mysql

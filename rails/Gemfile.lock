@@ -98,6 +98,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
+    mysql2 (0.3.16)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyamorous (1.0.0)
@@ -188,6 +189,7 @@ DEPENDENCIES
   inifile (~> 3.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mysql2
   kaminari
   pg
   rails (= 4.1.4)

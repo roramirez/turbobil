@@ -1,0 +1,29 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: turbobil
+  pool: 8
+  username: turbobil
+  password: "changeme"
+  host: localhost
+  # socket: /tmp/mysql.sock
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: turbobil_dev
+  pool: 8
+  username: turbobil
+  password: "changeme"
+  host: localhost
+  # socket: /tmp/mysql.sock
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: turbobil_test
+  pool: 8
+  username: turbobil
+  password:
+  host: localhost
+  # socket: /tmp/mysql.sock
