@@ -18,7 +18,7 @@ This guide is tested on Debian/Ubuntu systems
 
 ### Database
     # Install PostgreSQL database
-    sudo aptitude install -y postgresql postgresql-client libpq-dev
+    sudo aptitude install -y postgresql postgresql-client libpq-dev python-psycopg2
 
     # Access to PostgreSQL
     sudo -u postgres psql -d template1
