@@ -2,7 +2,7 @@ ActiveAdmin.register Customer, namespace: :admins do
 
   scope_to :current_admin
 
-  permit_params :name, :email, :type_customer, :credit, :type_pay, :password
+  permit_params :name, :email, :type_customer, :credit, :type_pay, :password, :price_customer_id
 
   filter :type_customer
   filter :price_customer, :collection => proc {PriceCustomer.where admin: current_admin }
