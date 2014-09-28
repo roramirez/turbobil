@@ -3,7 +3,13 @@ desc "create/update account file for sip conf"
 
 task :account_sip => :environment do
 
-  if account = Account.find(ENV["ID"])
+  if ENV["ID"] == 'ALL'
+    accounts = Account.all
+  else
+    accounts = Account.find(ENV["ID"])
+  end
+
+  accounts.each do |account|
     filename =  "#{Settings.turbobil['dir_sips']}#{account.code}.account"
     file = IniFile.new( :filename => filename, :encoding => 'UTF-8' )
 
