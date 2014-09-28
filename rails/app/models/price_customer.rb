@@ -23,4 +23,12 @@ class PriceCustomer < ActiveRecord::Base
     name
   end
 
+
+  def self.get_join_route (id)
+   PriceCustomer
+    .select("route.*, price_customer.*, route.id as route_id, route.name AS route_name")
+    .joins("join route ON route.admin_id = price_customer.admin_id ")
+    .where(id: id)
+  end
+
 end

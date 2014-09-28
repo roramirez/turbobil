@@ -33,7 +33,11 @@ class CustomerController < ApplicationController
   end
 
   def prices
-    #TODO
+
+    @prices_customer = PriceCustomer.get_join_route(current_customer.price_customer_id)
+                                    .page(params[:page])
+                                    .sorted(params[:sort])
+                                    .per(10)
   end
 
   def dashboard
