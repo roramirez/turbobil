@@ -3,13 +3,6 @@ class CustomerController < ApplicationController
 
   before_filter :authenticate_customer!
 
-  def create
-    @customer = Customer.new(params[:customer].permit(:email, :name))
-    @customer.save
-
-    redirect_to customer_path
-  end
-
   def calls
     @calls = calls_filtered
     @calls = @calls.page(params[:page]).per(10)
