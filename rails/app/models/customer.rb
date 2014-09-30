@@ -24,4 +24,11 @@ class Customer < ActiveRecord::Base
     type_payment type_pay
   end
 
+  def minutes_call_last_days(days=7)
+    Call.where(customer: self)
+        .where("at >= ?", Time.now - days.days)
+        .group('DATE(at)')
+        .sum(:duration)
+  end
+
 end

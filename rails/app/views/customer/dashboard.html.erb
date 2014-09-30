@@ -4,4 +4,33 @@
   </div>
 <!-- /.col-lg-12 -->
 </div>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <i class="fa fa-bar-chart-o fa-fw"></i> Minutes on week
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body">
+        <%= content_tag :div, "", id: "minutes-area-chart" %>
+      </div>
+    <!-- /.panel-body -->
+  </div>
+</div>
 
+<script>
+$(function() {
+    Morris.Area({
+        element: 'minutes-area-chart',
+        data: <%= raw @minutes.to_json %>,
+        xkey: 'date',
+        ykeys: ['minutes'],
+        labels: ['Minutes'],
+        pointSize: 2,
+        hideHover: 'auto',
+        resize: true
+    });
+});
+
+
+</script>

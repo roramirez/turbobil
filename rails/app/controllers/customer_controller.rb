@@ -31,6 +31,10 @@ class CustomerController < ApplicationController
   end
 
   def dashboard
-    #TODO
+    @min = current_customer.minutes_call_last_days
+    @minutes = []
+    @min.each do |m|
+      @minutes.append({date: m[0], minutes: m[1]})
+    end
   end
 end
