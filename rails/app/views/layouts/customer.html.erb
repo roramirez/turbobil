@@ -19,6 +19,18 @@
   <div id="wrapper">
     <%= render "layouts/navbar" %>
     <div id="page-wrapper">
+      <% if flash[:error] %>
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= flash[:error] %>
+      </div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="alert alert-info alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
       <%= yield %>
     </div>
     <!-- /#page-wrapper -->
