@@ -69,4 +69,6 @@ Rails.application.routes.draw do
   get  'customer/prices'  => 'customer#prices'
   devise_for :customers, :path => '/customer', controllers: { sessions: :sessions }
   get "/customer" => "customer#dashboard"
+  get "/customer/account/:id" => "customer#edit_account", as: 'account'
+  post "/customer/account" => "customer#update_account"
 end

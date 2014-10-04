@@ -23,6 +23,23 @@ class CustomerController < ApplicationController
     @accounts = current_customer.accounts.page(params[:page]).per(10)
   end
 
+  def edit_account
+    @account = current_customer.accounts.find(params[:id])
+  end
+
+  def update_account
+    @account = current_customer.accounts.find(params[:id])
+    if @account.update_attributes!(account_params)
+      flash[:notice] = "Successfully updated account."
+    end
+    redirect_to :action => 'edit_account', :id => @account
+  end
+
+  private
+  def account_params
+    params.require(:account).permit(:ip_auth, :password, codec_ids: [])
+  end
+
   def prices
     @prices_customer = PriceCustomer.get_join_route(current_customer.price_customer_id)
                                     .page(params[:page])

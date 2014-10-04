@@ -15,6 +15,7 @@
               <th>IP Auth</th>
               <th>Password</th>
               <th>Codecs</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +29,7 @@
                   <%= codec.name %>
                 <% end %>
               </td>
+              <td><%= link_to "Edit", account_path(account) %></td>
             </tr>
             <% end %>
            </tbody>
