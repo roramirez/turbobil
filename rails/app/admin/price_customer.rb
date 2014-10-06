@@ -95,33 +95,3 @@ ActiveAdmin.register PriceCustomer, namespace: :admins do
   end
 
 end
-
-
-ActiveAdmin.register PriceCustomer, :as => "Prices" , namespace: :customers do
-
-  scope_to :current_customer
-
-  config.clear_action_items!
-  actions :index
-
-  controller do
-    def scoped_collection
-      PriceCustomer.
-        select("route.*, price_customer.*, route.id as route_id, route.name AS route_name").
-        joins("join route ON route.admin_id = price_customer.admin_id ").
-        where(id: current_customer.price_customer_id)
-    end
-  end
-
-  config.filters = false
-
-  index do
-    column :prefix
-    column "Route", :route_name
-    column "Price"   do |p|
-         p.final_price_for_route(p.route_id, p.price_list)
-    end
-    actions
-  end
-
-end
