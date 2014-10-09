@@ -10,6 +10,7 @@ class Customer < ActiveRecord::Base
   validates_presence_of :type_pay
 
   validates :password, presence: true, on: :create
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
   has_many :accounts
   has_many :calls

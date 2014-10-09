@@ -3,6 +3,20 @@ class CustomerController < ApplicationController
 
   before_filter :authenticate_customer!
 
+  def profile
+    @user = current_customer
+  end
+
+  def update_profile
+    @user = current_customer.update_attributes!(profile_params)
+    redirect_to :action => 'profile'
+  end
+
+  private
+  def profile_params
+    params.require(:account).permit(:name, :email, :password)
+  end
+
   def calls
     @calls = calls_filtered
     @calls = @calls.page(params[:page]).per(10)
