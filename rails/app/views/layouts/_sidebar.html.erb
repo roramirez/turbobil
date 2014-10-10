@@ -3,7 +3,7 @@
 
     <div class="sidebar-header">
 
-      <img src="http://www.gravatar.com/avatar/<%= gravatar_icon(current_customer.email) %>" />
+      <img src="<%= avatar_icon(current_customer.email) %>" />
       <h2><%= current_customer.name %></h2>
       <h3><%= current_customer.email %></h3>
       <h3 class="text-center"><b>Credit:</b> <%= current_customer.credit %></h3>
