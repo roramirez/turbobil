@@ -12,11 +12,6 @@ class CustomerController < ApplicationController
     redirect_to :action => 'profile'
   end
 
-  private
-  def profile_params
-    params.require(:account).permit(:name, :email, :password)
-  end
-
   def calls
     @calls = calls_filtered
     @calls = @calls.page(params[:page]).per(10)
@@ -49,11 +44,6 @@ class CustomerController < ApplicationController
     redirect_to :action => 'edit_account', :id => @account
   end
 
-  private
-  def account_params
-    params.require(:account).permit(:ip_auth, :password, codec_ids: [])
-  end
-
   def prices
     @prices_customer = PriceCustomer.get_join_route(current_customer.price_customer_id)
                                     .page(params[:page])
@@ -68,4 +58,14 @@ class CustomerController < ApplicationController
       @minutes.append({date: m[0], minutes: m[1]})
     end
   end
+
+  private
+  def profile_params
+    params.require(:customer).permit(:name, :email, :password)
+  end
+
+  def account_params
+    params.require(:account).permit(:ip_auth, :password, codec_ids: [])
+  end
+
 end
