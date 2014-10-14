@@ -39,8 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 #DBs
-gem 'pg'
-gem "mysql2"
+gem 'pg', group: :postgres
+gem "mysql2", group: :mysql
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'

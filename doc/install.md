@@ -8,7 +8,7 @@ This guide is tested on Debian/Ubuntu systems
     aptitude upgrade
 
     # Neccesary packages
-    aptitude install sudo git nodejs
+    aptitude install sudo git nodejs libsqlite3-dev
 
     #Add user
     sudo adduser --disabled-login --gecos 'TurboBil' turbobil
@@ -59,18 +59,42 @@ on */etc/postgresql/9.3/main/pg_hba.conf*
     sudo -u turbobil -H git submodule update
 
 
-The project is develop in Ruby 2.1.2 and used RVM for install
+The project is develop in Ruby 2.1.2
+
+
+  Install Ruby by RVM
 
     su turbobil
     curl -sSL https://get.rvm.io | bash -s --ruby=2.1.2
     source ~/.rvm/scripts/rvm
     rvm --default use 2.1.2
-    gem install bundler --no-ri --no-rdoc
 
+
+  Install Ruby from Source
+
+    # Required packages to compile Ruby
+    sudo aptitude install  build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate python-docutils pkg-config cmake
+
+    # tmp dir
+    mkdir /tmp/src && cd /tmp/src
+    # download source version 2.1.2
+    curl -L --progress ftp://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.2.tar.gz | tar xz
+    cd ruby-2.1.2
+    ./configure --disable-install-rdoc
+    make
+    sudo make install
 
 #### Config enviroment
-    cd tbil/rails/
-    bundle install
+    su turbobil
+    sudo gem install bundler --no-ri --no-rdoc
+    cd rails/
+
+
+    # For PostgreSQL
+    sudo bundle install --without mysql
+
+    # For MySQL
+    sudo bundle install --without postgres
 
     # PostgreSQL Config database
     cp tbil/rails/config/database.yml.postgresql tbil/rails/config/database.yml
