@@ -8,7 +8,7 @@ This guide is tested on Debian/Ubuntu systems
     aptitude upgrade
 
     # Neccesary packages
-    aptitude install sudo git nodejs libsqlite3-dev
+    aptitude install sudo git nodejs
 
     #Add user
     sudo adduser --disabled-login --gecos 'TurboBil' turbobil
