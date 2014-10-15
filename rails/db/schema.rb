@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904024147) do
+ActiveRecord::Schema.define(version: 20141014020434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,9 @@ ActiveRecord::Schema.define(version: 20140904024147) do
     t.text     "dialstatus"
     t.float    "price_for_customer"
   end
+
+  add_index "call", ["at", "admin_id"], name: "idx_at_admin_on_call", using: :btree
+  add_index "call", ["at", "customer_id"], name: "idx_at_customer_on_call", using: :btree
 
   create_table "codec", force: true do |t|
     t.text "name"
