@@ -38,10 +38,13 @@ class CustomerController < ApplicationController
 
   def update_account
     @account = current_customer.accounts.find(params[:id])
-    if @account.update_attributes!(account_params)
+    if @account.update_attributes(account_params)
       flash[:notice] = "Successfully updated account."
+      redirect_to :action => 'edit_account', :id => @account
+    else
+      flash[:error] = "Dont update account."
+      render :edit_account
     end
-    redirect_to :action => 'edit_account', :id => @account
   end
 
   def prices
