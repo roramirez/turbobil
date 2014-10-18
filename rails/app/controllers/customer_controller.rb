@@ -8,8 +8,21 @@ class CustomerController < ApplicationController
   end
 
   def update_profile
-    @user = current_customer.update_attributes!(profile_params)
-    redirect_to :action => 'profile'
+    @user = current_customer
+
+    params_to_update = profile_params.dup
+    if params_to_update[:password].blank?
+      params_to_update.delete(:password)
+      params_to_update.delete(:password_confirmation)
+    end
+
+    if @user.update_attributes(params_to_update)
+      flash[:notice] = "Successfully updated your profile."
+      redirect_to :action => 'profile'
+    else
+      flash[:error] = "Dont update profile."
+      render :profile
+    end
   end
 
   def calls
