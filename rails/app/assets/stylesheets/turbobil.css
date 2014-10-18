@@ -52,3 +52,7 @@ a.sorted {
 .checkbox_span {
     padding-left: 15px
 }
+
+.remember-me {
+    padding-left: 5px !important;
+}

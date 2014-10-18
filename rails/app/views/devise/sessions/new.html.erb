@@ -16,7 +16,8 @@
               </div>
               <div class="checkbox">
                 <label>
-                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  <%= f.input_field :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  <%= f.label :remember_me, class: 'remember-me' %>
                 </label>
               </div>
               <%= f.button :submit, "Sign in", class: 'btn btn-lg btn-success btn-block' %>
