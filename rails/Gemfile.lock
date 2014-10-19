@@ -102,6 +102,8 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.25.1)
     minitest (5.4.0)
+    morrisjs-rails (0.5.1)
+      railties (> 3.1, < 5)
     multi_json (1.10.1)
     mysql2 (0.3.16)
     orm_adapter (0.5.0)
@@ -134,6 +136,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.0.0)
+    raphael-rails (2.1.2)
     rdoc (4.1.1)
       json (~> 1.4)
     responders (1.0.0)
@@ -197,9 +200,11 @@ DEPENDENCIES
   jquery-datetimepicker-rails
   jquery-rails
   kaminari
+  morrisjs-rails
   mysql2
   pg
   rails (= 4.1.4)
+  raphael-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   settingslogic
