@@ -1,5 +1,5 @@
 //= require jquery
-//= require sb-admin-2/bootstrap.min.js
+//= require bootstrap
 //= require sb-admin-2/plugins/metisMenu/metisMenu.min.js
 //= require sb-admin-2/plugins/morris/raphael.min.js
 //= require sb-admin-2/plugins/morris/morris.min.js
