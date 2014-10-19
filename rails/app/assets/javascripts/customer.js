@@ -1,4 +1,4 @@
-//= require sb-admin-2/jquery-1.11.0
+//= require jquery
 //= require sb-admin-2/bootstrap.min.js
 //= require sb-admin-2/plugins/metisMenu/metisMenu.min.js
 //= require sb-admin-2/plugins/morris/raphael.min.js
