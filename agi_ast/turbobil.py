@@ -57,10 +57,13 @@ if __name__ == '__main__':
         sys.exit()
 
     check_credit(customer)
-    if customer.customer_id:
+
+    #TODO
+    #Not yet implement
+    #if customer.customer_id:
     #check reseller credit
-        reseller = database.get_customer_by_id(customer.customer_id)
-        check_credit(reseller)
+    #    reseller = database.get_customer_by_id(customer.customer_id)
+    #    check_credit(reseller)
 
     #check route
     routes = database.get_routes_to_customer(customer, destination)
