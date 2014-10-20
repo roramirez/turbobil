@@ -55,6 +55,9 @@ if __name__ == '__main__':
     if not customer:
         logging.error('customer not found')
         sys.exit()
+    elif customer.active == False:
+        logging.error('customer no active')
+        sys.exit()
 
     check_credit(customer)
 
