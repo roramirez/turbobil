@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 #DBs
-gem 'pg', group: :postgres
+gem 'pg', group: :postgresql
 gem "mysql2", group: :mysql
 
 gem 'activeadmin', github: 'gregbell/active_admin'

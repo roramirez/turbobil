@@ -94,7 +94,7 @@ The project is develop in Ruby 2.1.2
     sudo bundle install --without mysql
 
     # For MySQL
-    sudo bundle install --without postgres
+    sudo bundle install --without postgresql
 
     # PostgreSQL Config database
     cp tbil/rails/config/database.yml.postgresql tbil/rails/config/database.yml
