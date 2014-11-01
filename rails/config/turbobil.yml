@@ -1,9 +1,0 @@
-production: &base
-  turbobil:
-    dir_config_asterisk : /etc/asterisk
-
-development:
-  <<: *base
-
-test:
-  <<: *base
