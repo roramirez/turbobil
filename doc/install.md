@@ -65,7 +65,7 @@ The project is develop in Ruby 2.1.2
   Install Ruby by RVM
 
     su turbobil
-    curl -sSL https://get.rvm.io | bash -s --ruby=2.1.2
+    \curl -sSL https://get.rvm.io | bash -s -- --ruby=2.1.2
     source ~/.rvm/scripts/rvm
     rvm --default use 2.1.2
 
