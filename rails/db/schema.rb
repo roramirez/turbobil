@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20141014020434) do
 
   create_table "admin", force: true do |t|
     t.text     "name"
-    t.string   "email",                  limit: 320,              null: false
+    t.string   "email",                  limit: 255,              null: false
     t.string   "encrypted_password",                 default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20141014020434) do
 
   create_table "customer", force: true do |t|
     t.text     "name"
-    t.string   "email",                  limit: 320,              null: false
+    t.string   "email",                  limit: 255,              null: false
     t.float    "credit"
     t.integer  "type_pay"
     t.integer  "customer_id"

@@ -17,7 +17,7 @@ class CreateDatabase < ActiveRecord::Migration
 
     create_table :admin, force: true do |t|
       t.text :name
-      t.string :email, null: false, :limit => 320
+      t.string :email, null: false, :limit => 255
     end
 
     create_table :call, force: true do |t|
@@ -50,7 +50,7 @@ class CreateDatabase < ActiveRecord::Migration
 
     create_table :customer, force: true do |t|
       t.text :name
-      t.string :email, null: false, :limit => 320
+      t.string :email, null: false, :limit => 255
       t.float :credit
       t.integer :type_pay
       t.references :customer
