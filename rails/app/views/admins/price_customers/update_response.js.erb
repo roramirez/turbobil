@@ -1,6 +1,0 @@
-<% if @price_customer.errors.any? %>
-  var html = "<%= escape_javascript(render 'error_messages', object: @price_customer) %>";
-  $('#quick-add-errors').html(html);
-<% else %>
-  window.location.reload();
-<% end %>
